@@ -1,7 +1,8 @@
 <?php
 //Включаем запрет на неявное преобразование типов
 declare(strict_types=1);
-
+// убрать всяческие предупреждения об использовании старых функций
+error_reporting(E_ALL ^ E_DEPRECATED);
 session_start();
 
 try {

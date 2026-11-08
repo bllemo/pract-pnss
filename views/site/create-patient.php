@@ -1,7 +1,8 @@
 <h2>Регистрация пациента</h2>
 <hr>
 <h3><?= $message ?? ''; ?></h3>
-<form method="post">
+<form method="post">        
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <label>Фамилия</label>
     <input type="text" name="last_name">
 

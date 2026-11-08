@@ -19,4 +19,10 @@ class Patient extends Model
         'middle_name',
         'birth_date',
     ];
+
+    //Записи пациента
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
 }

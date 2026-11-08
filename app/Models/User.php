@@ -49,4 +49,10 @@ class User extends Model implements IdentityInterface
         return self::where(['login' => $credentials['login'],
             'password' => md5($credentials['password'])])->first();
     }
+
+    //Записи, созданные пользователем
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class, 'created_by');
+    }
 }

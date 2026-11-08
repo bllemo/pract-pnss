@@ -3,6 +3,7 @@
 namespace Src;
 
 use Exception;
+use Debug\DebugTools;
 
 class View
 {
@@ -24,7 +25,7 @@ class View
         global $app;
         $root = $app->settings->getRootPath();
         $path = $app->settings->getViewsPath();
-        return $_SERVER['DOCUMENT_ROOT'] . $path; // было return $_SERVER['DOCUMENT_ROOT'] . $root . $path
+        return $_SERVER['DOCUMENT_ROOT'] . $root . $path;
     }
 
     //Путь до основного файла с шаблоном сайта

@@ -47,15 +47,16 @@ CREATE TABLE doctors (
   first_name       VARCHAR(255) NOT NULL,
   middle_name      VARCHAR(255) NULL,
   birth_date       DATE NOT NULL,
-  position_id      BIGINT UNSIGNED NOT NULL,
-  specification_id BIGINT UNSIGNED NOT NULL,
+  position_id      BIGINT UNSIGNED NULL,
+  deleted          BOOLEAN NOT NULL DEFAULT FALSE,
+  specification_id BIGINT UNSIGNED NULL,
   PRIMARY KEY (id),
   CONSTRAINT fk_doctors_position
     FOREIGN KEY (position_id) REFERENCES positions (id)
-    ON DELETE RESTRICT ON UPDATE CASCADE,
+    ON DELETE SET NULL ON UPDATE CASCADE,
   CONSTRAINT fk_doctors_specification
     FOREIGN KEY (specification_id) REFERENCES specifications (id)
-    ON DELETE RESTRICT ON UPDATE CASCADE
+    ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 CREATE TABLE appointments (

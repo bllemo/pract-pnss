@@ -2,6 +2,7 @@
 <hr>
 <h3><?= $message ?? ''; ?></h3>
 <form method="post">
+    <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
     <label>Логин</label>
     <input type="text" name="login">
 

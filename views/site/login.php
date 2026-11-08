@@ -5,6 +5,7 @@
 if (!app()->auth::check()):
     ?>
     <form method="post">
+        <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
         <label>Логин</label>
         <input type="text" name="login">
 
