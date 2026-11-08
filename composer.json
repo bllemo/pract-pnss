@@ -1,0 +1,27 @@
+{
+    "name": "bllemo/pnss",
+    "description": "PNSS",
+    "type": "project",
+    "license": "MIT",
+    "config": {
+        "platform": {
+            "php": "8.2"
+        }
+    },
+    "authors": [
+        {
+            "name": "bllemo",
+            "email": "podkovskij.maks1@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Src\\": "core/Src/",
+            "": "app/"
+        }
+    }
+}
